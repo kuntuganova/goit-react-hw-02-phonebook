@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import nextId from 'react-id-generator';
+import { nanoid } from 'nanoid';
 import ContactForm from './contactForm/ContactForm';
 import ContactList from './contactList/ContactList';
 import Filter from './filter/Filter';
@@ -31,7 +31,7 @@ export class App extends Component {
       this.setState(prev => ({
         contacts: [
           ...prev.contacts,
-          { id: nextId(), name: name, number: number },
+          { id: nanoid(), name: name, number: number },
         ],
       }));
     }
